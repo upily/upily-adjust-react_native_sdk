@@ -111,6 +111,7 @@ public class Adjust extends ReactContextBaseJavaModule implements LifecycleEvent
         String externalDeviceId = null;
         String urlStrategy = null;
         String preinstallFilePath = null;
+        String fbAppId = null;
         long secretId  = 0L;
         long info1 = 0L;
         long info2 = 0L;
@@ -303,6 +304,12 @@ public class Adjust extends ReactContextBaseJavaModule implements LifecycleEvent
         if (checkKey(mapConfig, "coppaCompliantEnabled")) {
             coppaCompliantEnabled = mapConfig.getBoolean("coppaCompliantEnabled");
             adjustConfig.setCoppaCompliantEnabled(coppaCompliantEnabled);
+        }
+
+        // FB App Id.
+        if (checkKey(mapConfig, "fbAppId")) {
+            fbAppId = mapConfig.getString("fbAppId");
+            adjustConfig.setFbAppId(fbAppId);
         }
 
         // Final Android attribution.

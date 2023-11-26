@@ -289,6 +289,7 @@ var AdjustConfig = function(appToken, environment) {
     this.preinstallFilePath = null;
     this.playStoreKidsAppEnabled = null;
     this.finalAndroidAttributionEnabled = null;
+    this.fbAppId = null;
     // iOS only
     this.allowiAdInfoReading = null;
     this.allowAdServicesInfoReading = null;
@@ -401,6 +402,10 @@ AdjustConfig.prototype.setUrlStrategy = function(urlStrategy) {
 
 AdjustConfig.prototype.setCoppaCompliantEnabled = function(coppaCompliantEnabled) {
     this.coppaCompliantEnabled = coppaCompliantEnabled;
+};
+
+AdjustConfig.prototype.setFbAppId = function(fbAppId) {
+    this.fbAppId = fbAppId;
 };
 
 AdjustConfig.prototype.setReadMobileEquipmentIdentity = function(readMobileEquipmentIdentity) {

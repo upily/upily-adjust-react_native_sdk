@@ -104,6 +104,7 @@ declare module 'react-native-adjust' {
     public setLinkMeEnabled(linkMeEnabled: boolean): void
     public setFinalAndroidAttributionEnabled(finalAndroidAttributionEnabled: boolean): void
     public setAttConsentWaitingInterval(attConsentWaitingInterval: number): void
+    public setFbAppId(fbAppId: string): void
 
     public setAttributionCallbackListener(
       callback: (attribution: AdjustAttribution) => void
