@@ -503,7 +503,8 @@ RCT_EXPORT_METHOD(updateConversionValueWithErrorCallback:(NSNumber * _Nonnull)co
                                            errorCallback:(RCTResponseSenderBlock)callback) {
     [Adjust updatePostbackConversionValue:[conversionValue intValue]
                         completionHandler:^(NSError * _Nullable error) {
-        callback(@[[error localizedDescription]]);
+        NSString *errorDescription = [error localizedDescription] ?: @"Unknown error";
+        callback(@[errorDescription]);
     }];
 }
 
@@ -515,7 +516,8 @@ RCT_EXPORT_METHOD(updateConversionValueWithSkad4ErrorCallback:(NSNumber * _Nonnu
                               coarseValue:coarseValue
                                lockWindow:[lockWindow boolValue]
                         completionHandler:^(NSError * _Nullable error) {
-        callback(@[[error localizedDescription]]);
+        NSString *errorDescription = [error localizedDescription] ?: @"Unknown error";
+        callback(@[errorDescription]);
     }];
 }
 
